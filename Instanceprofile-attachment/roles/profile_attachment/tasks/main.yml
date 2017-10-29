@@ -1,0 +1,13 @@
+---
+- name: get file contents
+  command: cat {{script}}
+  register: my_items
+- pause:
+     seconds: 8 
+- name: attachement
+  #shell: aws ec2 describe-instances
+  shell: aws ec2 associate-iam-instance-profile --instance-id "{{ item }}" --iam-instance-profile Name={{profilename}}
+  with_items: "{{ my_items.stdout_lines }}"
+  register: r
+#- debug: msg="{{ item.stdout_lines }}"
+#  with_items: "{{ r.results }}"

@@ -1,0 +1,9 @@
+---
+   AWS_ACCESS_KEY_ID: AKIAJPFVSV3VKR6XTIQQ 
+   AWS_SECRET_ACCESS_KEY: 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 
+   AWS_DEFAUlT_REGION: us-west-2
+   rolename: newvaluerole
+   profilename: newvaluerole      
+   trust: /root/trust.json
+   script: /root/instanceid.text
+   policy: arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess

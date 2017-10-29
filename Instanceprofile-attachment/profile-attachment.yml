@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  remote_user: root
+  become: yes
+  become_user: root
+  vars_files:
+     - "vars/awscreds.yml"
+  roles:
+          - awscliconfig 
+          - createrole
+          - profile_attachment
+

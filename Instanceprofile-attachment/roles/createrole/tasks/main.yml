@@ -1,0 +1,9 @@
+---
+- name: create role
+  shell: aws iam create-role --role-name {{rolename}} --assume-role-policy-document file://{{trust}}
+- name: Attach policy
+  shell: aws iam attach-role-policy --role-name {{rolename}} --policy-arn {{policy}}
+- name: create profile
+  shell: aws iam create-instance-profile --instance-profile-name {{profilename}}
+- name: add role
+  shell: aws iam add-role-to-instance-profile --role-name {{rolename}} --instance-profile-name {{profilename}}
